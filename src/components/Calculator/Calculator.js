@@ -30,7 +30,7 @@ export function Calculator({ allowNegatives, percntAsMod }) {
         const tokens = display.split(" ");
         let lastToken = tokens[tokens.length - 1];
         if (!isOperator(lastToken) && typeof eval(lastToken) === "number") {
-            tokens[tokens.length - 1] = eval(lastToken) * (1/100);
+            tokens[tokens.length - 1] = parseFloat(eval(lastToken) * (1/100));
             let newDisplay = tokens.toString().replaceAll(",", " ");
             setDisplay(newDisplay);
         }
