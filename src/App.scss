@@ -21,3 +21,16 @@ body {
     margin-inline: auto;
     color: white;
 }
+
+.checkbox-container {
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--foreground_layer);
+    border-radius: 0.5rem;
+
+    & input[type=checkbox] {
+        margin-right: 0.25rem;
+    }
+}
