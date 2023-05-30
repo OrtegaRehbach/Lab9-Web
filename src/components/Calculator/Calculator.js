@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "../../assets/styles/Calculator.scss";
 
-export function Calculator() {
+export function Calculator({ allowNegatives, percntAsMod }) {
 
-    const allowNegatives = true;
-    const percntAsMod = true;
     const operators = ["/", "*", "-", "+"]
     const maxDigits = 9;
     const [lastExpression, setLastExpression] = useState("");
@@ -41,8 +39,6 @@ export function Calculator() {
     const handlePlusMinus = () => {
         const tokens = display.split(" ");
         let lastToken = tokens[tokens.length - 1];
-        // if(tokens.length === 1 &&)
-        //     setDisplay()
         if (!isOperator(lastToken) && typeof eval(lastToken) === "number") {
             tokens[tokens.length - 1] = "(-" + lastToken + ")";
             let newDisplay = tokens.toString().replaceAll(",", " ");

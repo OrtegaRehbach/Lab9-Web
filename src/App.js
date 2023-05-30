@@ -5,7 +5,7 @@ export function App() {
     return (
         <div>
             <h1>Calculadora</h1>
-            <Calculator></Calculator>
+            <Calculator percntAsMod={true} allowNegatives={false}></Calculator>
         </div>
     );
 }
